@@ -1,0 +1,315 @@
+:root {
+    --primary-color: #3a4f7a;
+    --secondary-color: #4a6fa5;
+    --accent-color: #5d8bf4;
+    --light-color: #f8f9fa;
+    --dark-color: #2d3436;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --danger-color: #f44336;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--dark-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: rgb(255, 255, 255);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.app-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.app-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+.todo-container {
+    padding: 2rem;
+}
+
+.input-section {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-section input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: 1px solid #031f43;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.input-section input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(93, 139, 244, 0.2);
+}
+
+.input-section button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.input-section button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-1px);
+}
+
+.filter-section {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 1px solid #032552;
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.filter-btn:hover:not(.active) {
+    background-color: #f1f5f9;
+}
+
+.task-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+#clearCompletedBtn {
+    background-color: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+#clearCompletedBtn:hover {
+    color: var(--danger-color);
+}
+
+#taskList {
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: var(--border-radius);
+    border: 1px solid #0653b8;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    border-left: 4px solid transparent;
+    border-left-color: var(--accent-color);
+}
+
+.task-item:hover {
+    box-shadow: var(--box-shadow);
+    border-left-color: var(--accent-color);
+}
+
+.task-checkbox {
+    margin-right: 1rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+    border: 10px solid #02244f;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.task-checkbox:checked {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.task-text {
+    flex: 1;
+    font-size: 1rem;
+}
+
+.task-text.completed {
+    color: #03295e;
+    text-decoration: line-through;
+}
+
+.task-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.task-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #08408f;
+    transition: var(--transition);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-btn:hover {
+    background-color: #f1f5f9;
+}
+
+.task-btn.edit:hover {
+    color: var(--accent-color);
+}
+
+.task-btn.delete:hover {
+    color: var(--danger-color);
+}
+
+.app-footer {
+    text-align: center;
+    padding: 1.25rem;
+    background-color: #013265;
+    color: #eff0f2;
+    font-size: 0.95rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #64748b;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #e2e8f0;
+}
+
+.empty-state p {
+    font-size: 1.1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-item {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .app-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .input-section {
+        flex-direction: column;
+    }
+    
+    .input-section button {
+        padding: 0.8rem;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-header {
+        padding: 1.5rem;
+    }
+    
+    .todo-container {
+        padding: 1.5rem;
+    }
+    
+    .filter-section {
+        flex-wrap: wrap;
+    }
+    
+    .task-item {
+        padding: 1rem;
+    }
+}v
