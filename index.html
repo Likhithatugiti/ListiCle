@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ListiCle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1><i class="fas fa-tasks"></i> ListiCle</h1>
+            <p class="subtitle">Your productivity companion</p>
+        </header>
+
+        <div class="todo-container">
+            <div class="input-section">
+                <input type="text" id="taskInput" placeholder="Add a new task..." autocomplete="off">
+                <button id="addTaskBtn"><i class="fas fa-plus"></i> Add</button>
+            </div>
+
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+
+            <div class="task-stats">
+                <span id="taskCount">0 tasks remaining</span>
+                <button id="clearCompletedBtn">Clear Completed</button>
+            </div>
+
+            <ul id="taskList"></ul>
+        </div>
+
+        <footer class="app-footer">
+            <p>Manage all your tasks with this mini to-do list </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
